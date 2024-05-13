@@ -1,0 +1,35 @@
+// deletion in arrray at specific position
+#include <stdio.h>
+
+int main() {
+int a[50],pos,size,item,i;
+        printf(" enter the size of array:");
+        scanf("%d",&size);
+        printf("enter the element of array:");
+    for(i=0;i<=size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+        printf("enter the position from you want to delet th element:");
+        scanf("%d",&pos);
+    if(pos<=0||pos>size)
+    {
+        printf("invalid position");
+        return 1;
+    }
+    else
+        item=a[pos-1];
+        {
+            for(i=pos-1;i<=size-1;i++)
+            {
+                a[i]=a[i+1];
+            }
+            size--;
+        }
+    for(i=0;i<=size;i++)
+    {
+        printf("%d",a[i]);
+    }
+    
+    return 0;
+}
