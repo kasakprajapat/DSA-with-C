@@ -1,0 +1,20 @@
+// Traversal in array
+#include <iostream>
+
+int main() {
+int a[50],i,size;
+        printf("enter the size of array:");
+        scanf("%d",&size);
+        printf("enter the element of array:");
+    for(i=0;i<=size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+        printf("enter the element in array:");
+    for(i=0;i<=88size;i++)
+    {
+        printf("%d",a[i]);
+    }
+
+    return 0;
+}
