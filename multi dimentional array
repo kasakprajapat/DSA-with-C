@@ -1,0 +1,46 @@
+A multi-dimensional array can be termed as an array of arrays that stores homogeneous data in tabular form. This article covers Multidimensional Arrays in C with working examples. It also covers 2-dimentional and 3-dimentional array.
+Introduction
+An array of arrays that contains homogenous data in tabular form is commonly referred to as a multidimensional array. Data are stored in multidimensional arrays in a row-column order. In this article, we will learn more about multidimensional arrays in C. Along with this, we will discuss how to declare, access, and use multidimensional arrays effectively in our program with several examples.
+Multidimensional Arrays in C
+The array of arrays is called a multidimensional array.
+The process of declaring a multidimensional array is by specifying the variable type and the array name, followed by a set of square brackets indicating the number of elements in the primary array, and then another set of square brackets indicating the number of elements in the sub-arrays:
+
+string numbers [1] [2];
+
+An array literal, a comma-separated list enclosed in curly brackets, can be used to insert values much as regular arrays do. Each component of an array literal inside a multidimensional array is an additional array literal.
+
+ 
+string numbers[1] [2] = {
+  { "X", "W", "Y", "Z" },
+  { "A", "B", "C", "D" }
+};
+An array declaration gains a new dimension with each set of square brackets. An array with two dimensions is one like the one shown above.
+
+Any no of dimensions is possible for arrays. The complexity of the code increases with an array’s number of dimensions. The following three-dimensional array is:
+string numbers [1][2][2] = {
+  {
+    { "X", "W" },
+    { "Y", "Z" }
+  },
+  {
+    { "A", "B" },
+    { "C", "D" }
+  }
+};
+Representation of 2-D Array
+Row and column indices are used to access elements in two-dimensional arrays.
+
+A[0] [0]	A[0] [1]	A[0] [2]
+A[1] [0]	A[1] [1]	A[1] [2]
+A[2] [0]	A[2] [1]	A[2] [2] 
+II – Three-Dimensional Array
+A 3-D array is initialized in the same way as a two-dimensional array. The distinction is that as the no of dimensions rises, so will the number of nested braces.
+
+ 
+int a[2][3][4] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230};
+
+However, a three-dimensional array should not be initialized in this manner. An improved method for initializing this array is:
+int a[2][3][4] = {
+{ {0, 10, 20, 30} {40, 50, 60, 70} {80, 90, 100, 110} }
+ { {120, 130, 140, 150} {160, 170, 180, 190} {200, 210, 220, 230}; 
+}
