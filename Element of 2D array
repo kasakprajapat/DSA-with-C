@@ -1,0 +1,36 @@
+// enter the element in 2D array
+#include <stdio.h>
+
+int main() {
+    int i,j;
+    int row ,column;
+    
+        printf("enter the value of row:");
+        scanf("%d",&row);
+        printf("enter the value of column:");
+        scanf("%d",&column);
+        printf("enter the element of array:\n");
+        
+int arr[row][column];
+        for(i=0;i<row;i++)
+        {
+            for(j=0;j<column;j++)
+        {
+             printf("Element at [%d][%d]: ", i, j);
+             scanf("%d", &arr[i][j]);
+        }   
+             printf("\n");
+        }  
+         printf("element in array is:\n");
+        for(i=0;i<row;i++)
+        {
+            for(j=0;j<column;j++)
+        {
+            printf("  %d  ",arr[i][j]);
+        }
+             printf("\n");
+    }
+        
+
+    return 0;
+}
