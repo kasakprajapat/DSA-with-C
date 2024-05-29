@@ -1,0 +1,22 @@
+//write a program for memeory allocation using realloc function when size in knowm
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+    int i,n=5;
+    int *q;
+    printf("enter the value of n:");
+    scanf("%d",&n);
+    q=(int*)malloc(5);
+    q=(int*)realloc(q,n);
+    printf("enter the element : ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&q[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d \t",q[i]);
+    }
+}
+
