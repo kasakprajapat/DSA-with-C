@@ -1,0 +1,17 @@
+//write a program for memeory allocation using calloc function when size in knowm
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+    int i,n=5;
+    int*q=(int*)calloc(5,2);
+    printf("enter the element : ");
+    for(i=0;i<5;i++)
+    {
+        scanf("%d",&q[i]);
+    }
+    for(i=0;i<5;i++)
+    {
+        printf("%d \t",q[i]);
+    }
+}
