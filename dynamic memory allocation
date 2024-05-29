@@ -1,0 +1,20 @@
+// write a program for memeory allocation i c
+#include <stdio.h>
+#include<stdlib.h>
+void main() 
+{
+    int i,n;
+    printf("enter number of element:");
+    scanf("%d",&n);
+    int *a=(int*)malloc(n*sizeof(int));
+    printf("\nenter element:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+    }
+
+}
