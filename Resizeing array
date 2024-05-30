@@ -1,0 +1,29 @@
+// write a program for resizing array dynamically
+#include <stdio.h>
+#include<stdlib.h>
+int main() 
+{
+    int i;
+    int n=5;
+    int*p=(int*)malloc(n*sizeof(int));
+    for(i=0;i<5;i++)
+    {
+        p[i]=i+5;
+    }
+    for(i=0;i<5;i++)
+    {
+        printf("%d",i);
+    }
+    int*q=(int*)malloc(10*sizeof(int));
+    for(i=0;i<5;i++)
+    {
+        q[i]=p[i];
+    }
+    p=q;
+    q=NULL;
+    for(i=0;i<5;i++)
+    {
+        printf("%d",p[i]);
+    }
+    return 0;
+}
