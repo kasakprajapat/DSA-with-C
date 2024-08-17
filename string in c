@@ -1,0 +1,12 @@
+//Wirte a code for string output or length of string
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+    char str[50];
+        printf("\n enter sting");
+        gets(str);
+    //use gets for print whole string
+        printf("length of string is: %d",strlen(str));
+    return 0;
+}
