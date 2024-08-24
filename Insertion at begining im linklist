@@ -1,0 +1,57 @@
+// Write a program for insertion in begining
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+    {
+        int data;
+        struct node * next;
+    };
+    void linklisttraverasl(struct node*ptr)
+{
+    while (ptr!= NULL)
+    {
+        printf("element: %d \n",ptr->data);
+        ptr=ptr->next;
+    }
+}
+      struct node*insertAtFirst(struct node*head,int data)
+    {
+        struct node*ptr=(struct node*)malloc(sizeof(struct node));
+        ptr->next=head;
+        ptr->data=data;
+        return ptr;
+    }
+    int main()
+ {
+        struct node*head;
+        struct node* second;
+        struct node* third;
+        struct node* fourth;
+    //allocate memory for nodes
+    head = (struct node*)malloc(sizeof(struct node));
+    second = (struct node*)malloc(sizeof(struct node));
+    third = (struct node*)malloc(sizeof(struct node));
+    fourth = (struct node*)malloc(sizeof(struct node));
+     
+    //link first and scond node
+    head->data=3;
+    head->next=second;
+    
+    //link   node
+    second->data=4;
+    second->next=third;
+
+    
+    //link second and third node
+    third->data=5;
+    third->next=fourth;
+    
+     // link third and fourth node  
+    fourth->data=6;
+    fourth->next=NULL;
+
+    //linklisttraverasl(head);
+    head=insertAtFirst(head,7);
+    linklisttraverasl(head);
+    return 0;
+}
