@@ -1,0 +1,149 @@
+// Write a program for linkedlist with menu 
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+    {
+        int data;
+        struct node * next;
+    };
+    ///linklist traversal////
+    void linklisttraverasl(struct node*ptr)
+    {
+         while (ptr!= NULL)
+        {
+             printf("element: %d \n",ptr->data);
+            ptr=ptr->next;
+        }
+    }
+    //////insert at first//////
+      struct node* insertAtFirst(struct node*head,int data)
+    {
+        struct node*ptr=(struct node*)malloc(sizeof(struct node));
+        ptr->next = head;
+        ptr->data = data;
+        return ptr;
+    }
+    /////insert at end//////
+    struct node*insertAtEnd(struct node*head,int data)
+    {
+        struct node*ptr= (struct node*)malloc(sizeof(struct node));
+        ptr->data = data;
+        ptr->next=NULL;
+        struct node * p = head;
+        while(p->next!=NULL)
+        {
+            p=p->next;
+        }
+         p->next=ptr;
+      
+        return head;
+    }
+    ////insert at specific index///
+    struct node*insertAtIndex(struct node*head,int data, int index)
+    {
+   if (index < 0) 
+    {
+        printf("Invalid index\n");
+        return head;
+    }
+       struct node*ptr=(struct node*)malloc(sizeof(struct node));
+    {
+        ptr->data = data;
+    if (index == 0) {
+        ptr->next = head;
+        return ptr;
+    }
+         struct node*p=head;
+        int i=0;
+        while(i!=index-1)
+        {
+            p=p->next;
+            i++;
+        }
+        if (p->next == NULL) {
+        printf("Index out of range\n");
+        free(ptr);
+        return head;
+    }
+        ptr->data=data;
+        ptr->next=p->next;
+        p->next=ptr;
+    
+        return head;
+ }
+    }
+    
+    int main()
+ {
+        struct node*head;
+        struct node* second;
+        struct node* third;
+        struct node* fourth;
+    //allocate memory for nodes
+    head = (struct node*)malloc(sizeof(struct node));
+    second = (struct node*)malloc(sizeof(struct node));
+    third = (struct node*)malloc(sizeof(struct node));
+    fourth = (struct node*)malloc(sizeof(struct node));
+     
+    //link first and scond node
+    head->data=1;
+    head->next=second;
+    
+    //link second node to third
+    second->data=2;
+    second->next=third;
+
+    
+    //link second and third node
+    third->data=3;
+    third->next=fourth;
+    
+     // link third and fourth node  
+    fourth->data=4;
+    fourth->next=NULL;
+
+ int choice;
+    while (1) 
+    {
+        printf("\n1: Display list");
+        printf("\n2: Insert at beginning");
+        printf("\n3: Insert at end");
+        printf("\n4: Insert at specific position");
+        printf("\n5: Exit");
+        printf("\nEnter your choice: ");
+        scanf("%d", &choice);
+    
+///for menu////
+    switch(choice)
+    {
+    case 1:
+    printf("\n1:display list \n");
+    linklisttraverasl(head);
+    break;
+    
+    case 2:
+    printf("\n2: insert at begining\n");
+    head=insertAtFirst(head,18);
+    break;
+    
+    case 3:
+    printf("\n3: insert at End\n");
+    head=insertAtEnd(head,12);
+    break;
+    
+    case 4:
+    printf("\n4: insert at specific position\n");
+    insertAtIndex(head,20,3);
+    break;
+    
+    case 5:
+    printf("\n5: exit \n");
+    break; 
+    
+    default:
+    printf("Null");
+    break;
+    }
+    }
+     return 0;
+}
