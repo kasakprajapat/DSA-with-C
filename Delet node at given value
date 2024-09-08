@@ -1,0 +1,71 @@
+// Write a program to delete node at givn value
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+    {
+        int data;
+        struct node * next;
+    };
+    void linklisttraverasl(struct node*ptr)
+{
+    while (ptr!= NULL)
+    {
+        printf("element: %d \n",ptr->data);
+        ptr=ptr->next;
+    }
+}
+///delete node at give value in lisnked list 
+struct node*DeleteAtValue(struct node*head,int value)
+{
+    struct node*p=head;
+    struct node*q=head->next;
+        while(q->next!=NULL && q->data!=value)
+        {
+            p= p->next;
+            q=q->next;
+        }
+        if(q->data==value)
+        {
+            p->next=q->next;
+        }
+        free(q);
+    return (head);
+}
+int main()
+ {
+        struct node*head;
+        struct node* second;
+        struct node* third;
+        struct node* fourth;
+    //allocate memory for nodes
+    head = (struct node*)malloc(sizeof(struct node));
+    second = (struct node*)malloc(sizeof(struct node));
+    third = (struct node*)malloc(sizeof(struct node));
+    fourth = (struct node*)malloc(sizeof(struct node));
+     
+    //link first and scond node
+    head->data=43;
+    head->next=second;
+    
+    //link   node
+    second->data=53;
+    second->next=third;
+
+    
+    //link second and third node
+    third->data=48;
+    third->next=fourth;
+    
+     // link third and fourth node  
+    fourth->data=43;
+    fourth->next=NULL;
+    printf("\n Linked List before deletion\n ");
+    linklisttraverasl(head);
+     ///delection of node
+    head=DeleteAtValue(head ,53);
+    printf("\n Linked List after deletion \n");
+    linklisttraverasl(head);
+
+    
+    return 0;
+}
